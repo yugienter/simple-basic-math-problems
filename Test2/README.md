@@ -3,13 +3,14 @@
 
 Task is to implement a service with couple of endpoints accessing a database through the Loopback 4 ORM.
 #### Given a Postgres database
-```CREATE TABLE notes (
+```
+CREATE TABLE notes (
 id SERIAL PRIMARY KEY,
 added VARCHAR(255) NULL,
 author VARCHAR(255) NOT NULL,
 content VARCHAR(255) NOT NULL
-);```
-
+);
+```
 #### Build GET /notes
 Variable return example:
 ```
