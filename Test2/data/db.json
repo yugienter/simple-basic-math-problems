@@ -1,0 +1,11 @@
+{
+  "ids": {
+    "Note": 3
+  },
+  "models": {
+    "Note": {
+      "1": "{\"id\":1,\"added\":\"2019-11-23\",\"author\":\"John\",\"content\":\"Remember to buy some milk\"}",
+      "2": "{\"id\":2,\"added\":\"2019-11-24\",\"author\":\"Jane\",\"content\":\"By cereals...\"}"
+    }
+  }
+}

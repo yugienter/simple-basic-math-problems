@@ -1,4 +1,4 @@
-import { repository } from '@loopback/repository';
+import { Filter, repository } from '@loopback/repository';
 import {
   post,
   param,
@@ -18,18 +18,18 @@ export class NoteController {
   @get('/notes', {
     responses: {
       '200': {
-        description: 'Array of Note model instances',
-        content: {
-          'application/json': {
-            schema: { type: 'array', items: { 'x-ts-type': Note } },
-          },
-        },
+        description: 'Note model instance',
+        content: { 'application/json': { schema: { 'x-ts-type': Note } } },
       },
     },
   })
-  async find(
-    @param.query.object('filter', getFilterSchemaFor(Note)) filter?: any,
+  async findOne(
+    @param.query.string('author') author: string = '',
+    @param.query.object('filter', getFilterSchemaFor(Note)) filter?: Filter<Note>,
   ): Promise<Note[]> {
+    if (author.length) {
+      return await this.noteRepository.find({ where: { author } });
+    }
     return await this.noteRepository.find(filter);
   }
 
