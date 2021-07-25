@@ -1,9 +1,60 @@
-# notes
+# simple-basic-math-problems
+# Test 2 : NodeJS/Loopback
 
-This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
-[initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
+Task is to implement a service with couple of endpoints accessing a database through the Loopback 4 ORM.
+#### Given a Postgres database
+```CREATE TABLE notes (
+id SERIAL PRIMARY KEY,
+added VARCHAR(255) NULL,
+author VARCHAR(255) NOT NULL,
+content VARCHAR(255) NOT NULL
+);```
 
-## Install dependencies
+#### Build GET /notes
+Variable return example:
+```
+{
+  id: 1,
+  added: "2019-11-23",
+  author: "John",
+  content: "Remember to buy some milk"
+},
+{
+  id: 2,
+  added: "2019-11-24",
+  author: "Jane",
+  content: "By cereals..."
+}
+```
+
+#### Build GET /notes/:id
+Varibale return example:
+```
+{
+  id: 2,
+  added: "2019-11-24",
+  author: "Jane",
+  content: "By cereals..."
+}
+```
+
+#### Build GET /notes?author=John
+Varibale return example:
+```
+{
+  id: 1,
+  added: "2019-11-23",
+  author: "John",
+  content: "Remember to buy some milk"
+},
+```
+
+#### Build POST /notes
+Create new data.
+
+### Run App
+
+#### Install dependencies
 
 By default, dependencies were installed when this application was generated.
 Whenever dependencies in `package.json` are changed, run the following command:
@@ -18,7 +69,7 @@ To only install resolved dependencies in `package-lock.json`:
 npm ci
 ```
 
-## Run the application
+#### Run the application
 
 ```sh
 npm start
@@ -28,7 +79,7 @@ You can also run `node .` to skip the build step.
 
 Open http://127.0.0.1:3000 in your browser.
 
-## Rebuild the project
+#### Rebuild the project
 
 To incrementally build the project:
 
@@ -42,7 +93,7 @@ To force a full build by cleaning up cached artifacts:
 npm run rebuild
 ```
 
-## Fix code style and formatting issues
+#### Fix code style and formatting issues
 
 ```sh
 npm run lint
@@ -54,20 +105,13 @@ To automatically fix such issues:
 npm run lint:fix
 ```
 
-## Other useful commands
+#### Other useful commands
 
 - `npm run migrate`: Migrate database schemas for models
 - `npm run openapi-spec`: Generate OpenAPI spec into a file
 
-## Tests
+#### Tests
 
 ```sh
 npm test
 ```
-
-## What's next
-
-Please check out [LoopBack 4 documentation](https://loopback.io/doc/en/lb4/) to
-understand how you can continue to add features to this application.
-
-[![LoopBack](https://github.com/loopbackio/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
