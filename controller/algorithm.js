@@ -50,11 +50,11 @@ algrithm.searchInsertPosition = async function (req, res) {
 
   const result = {
     description,
-    nums,
-    arrayLength,
-    target,
+    'array Input': nums,
+    'target input': target,
+    'expected results': position,
+    'how to test': inputUrlQueryTest,
     position,
-    inputUrlQueryTest,
   }
   return res.json({ result });
 }
