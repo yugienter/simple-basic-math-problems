@@ -82,7 +82,6 @@ describe('Alogorithm', function () {
                 .query({ nums: [1], target: 0 })
                 .end(function (err, res) {
                   res.should.have.status(200);
-                  res.should.be.json;
                   res.body.should.be.a('object');
                   res.body.should
                     .have.property('result')
@@ -94,3 +93,4 @@ describe('Alogorithm', function () {
         });
       });
     });
+});

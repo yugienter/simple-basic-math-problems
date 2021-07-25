@@ -34,11 +34,7 @@ algrithm.searchInsertPosition = async function (req, res) {
   const arrayLength = nums.length;
   let position = arrayLength;
   for (let i = 0; i < arrayLength; i++) {
-    if (nums[i] == target) {
-      position = i;
-      break;
-    }
-    else if (nums[i] > target) {
+    if (nums[i] >= target) {
       position = i;
       break;
     }
